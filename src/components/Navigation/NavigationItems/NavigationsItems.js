@@ -1,13 +1,15 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-import './NavigationItems.css';
-import NavigationItem from './NavigationItem/NavigationItem';
+import './NavigationItem.css';
 
-const navigationItems = () => (
-    <ul className="NavigationItems">
-        <NavigationItem link="/" active>Burger Builder</NavigationItem>
-        <NavigationItem link="/">Checkout</NavigationItem>
-    </ul>
+const navigationItem = ( props ) => (
+    <li className="NavigationItem">
+        <NavLink 
+            to={props.link}
+            exact={props.exact}
+            activeClassName={"active"}>{props.children}</NavLink>
+    </li>
 );
 
-export default navigationItems;
+export default navigationItem;
