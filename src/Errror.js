@@ -25,5 +25,6 @@ export default httpClient => {
       setError(null);
     };
 
+    
     return [error, errorConfirmedHandler];
 }
